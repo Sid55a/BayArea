@@ -10,7 +10,19 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model Code{
+  id String  @id @default(uuid())
+  fileName String @db.Text @unique
+  code String @db.Text
 
+  profileId String
+  profile Profile @relation(fields:[profileId],references:[id],onDelete:Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+@@index([profileId])
+}
 
 model  Profile{
   id String @id @default(uuid())
@@ -25,6 +37,7 @@ model  Profile{
 servers Server[]
 members Member[] 
 channels Channel[]
+code Code[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -159,6 +172,22 @@ deleted Boolean @default(false)
 
 
 
+model TODO{
+id String  @id @default(uuid())
+userId String
+Text String
+status Boolean @default(false)
+createdAt DateTime   @default(now())
+updateAt  DateTime   @updatedAt
+}
 
 
-
+model Note{
+id String  @id @default(uuid())
+userId String
+text String
+title String ? @db.Text
+status Boolean @default(false)
+createdAt DateTime   @default(now())
+updateAt  DateTime   @updatedAt
+}

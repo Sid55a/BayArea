@@ -1,6 +1,6 @@
-import qs from "query-string";
-import { useInfiniteQuery } from "@tanstack/react-query";
 import { useSocket } from "@/components/provider/socketProvider";
+import { useInfiniteQuery } from "@tanstack/react-query";
+import qs from "query-string";
 
 interface ChatQueryProps {
   queryKey: string;

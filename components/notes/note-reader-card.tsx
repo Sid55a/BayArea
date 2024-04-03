@@ -1,9 +1,9 @@
 import { Note } from "@prisma/client";
 import { ScrollArea } from "@radix-ui/react-scroll-area";
-import { ArrowLeftCircle, Trash } from "lucide-react";
 import axios from "axios";
-import toast from "react-hot-toast";
+import { ArrowLeftCircle, Trash } from "lucide-react";
 import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 import { Preview } from "../preview";
 
 interface NoteReaderProps {

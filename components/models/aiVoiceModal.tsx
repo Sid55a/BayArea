@@ -4,32 +4,13 @@ import {
   DialogContent,
   DialogDescription,
   DialogHeader,
-  DialogTitle,
-  DialogFooter,
+  DialogTitle
 } from "@/components/ui/dialog";
-import {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
 
-import axios from "axios";
-import { useForm } from "react-hook-form";
-import * as z from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Input } from "../ui/input";
-import { Button } from "../ui/button";
-import { useEffect, useState } from "react";
-import FileUpload from "../file-upload";
-import { redirect, useRouter } from "next/navigation";
 import { useModal } from "@/hooks/use-model-store";
-import { MusicPlayer } from "../aiComponents/musicPlayer";
-import { cn } from "@/lib/utils";
-import { ScrollArea } from "../ui/scroll-area";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import * as z from "zod";
 
 const formSchema = z.object({
   name: z.string().min(1, { message: "Music name is required" }),

@@ -1,5 +1,4 @@
 "use client";
-import axios from "axios";
 import {
   Card,
   CardContent,
@@ -8,18 +7,19 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { PlusCircle, PlusCircleIcon, Trash } from "lucide-react";
+import axios from "axios";
+import { PlusCircle, Trash } from "lucide-react";
 import { useEffect, useState } from "react";
 
+import { useModal } from "@/hooks/use-model-store";
 import { cn } from "@/lib/utils";
 import { TODO } from "@prisma/client";
-import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 import { Button } from "../ui/button";
-import { ScrollArea } from "../ui/scroll-area";
 import { Checkbox } from "../ui/checkbox";
+import { ScrollArea } from "../ui/scroll-area";
 import TODOForm from "./TODO-form";
-import { useModal } from "@/hooks/use-model-store";
 
 interface TODOProps {
   task: TODO[];

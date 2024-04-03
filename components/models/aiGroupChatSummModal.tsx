@@ -8,10 +8,9 @@ import {
 } from "@/components/ui/dialog";
 
 import { useModal } from "@/hooks/use-model-store";
-import { useRouter } from "next/navigation";
+import { Loader2 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { ScrollArea } from "../ui/scroll-area";
-import { Loader2 } from "lucide-react";
 
 export const AiGroupChatSummModel = () => {
   const [isMounted, setIsMounted] = useState(false);

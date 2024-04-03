@@ -7,17 +7,15 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { NoteCard } from "./note-card";
-import { Bot, MessageCircleIcon, PlusCircle, Text } from "lucide-react";
-import { useDebugValue, useState } from "react";
-import { Noteeditor } from "./note-editor";
-import { Note } from "@prisma/client";
-import { NoteReader } from "./note-reader-card";
-import { db } from "@/lib/db";
-import { cn } from "@/lib/utils";
-import { Button } from "../ui/button";
-import { ScrollArea } from "../ui/scroll-area";
 import { useModal } from "@/hooks/use-model-store";
+import { cn } from "@/lib/utils";
+import { Note } from "@prisma/client";
+import { PlusCircle } from "lucide-react";
+import { useState } from "react";
+import { ScrollArea } from "../ui/scroll-area";
+import { NoteCard } from "./note-card";
+import { Noteeditor } from "./note-editor";
+import { NoteReader } from "./note-reader-card";
 
 interface NotepageProps {
   notes: Note[];
@@ -47,25 +45,25 @@ export const Notepage = () => {
               <span>Notes...</span>
             </CardTitle>
             <CardDescription>Write a note to remember</CardDescription>
-          </CardHeader>  
-            <CardContent>
-              <div className={cn(!isopen && " ml-3 space-y-4")}>
-                {!isopen ? (
-                  notes.map((note, i) => (
-                    <div onClick={() => current(note)} key={note.id}>
-                      <NoteCard note={note} index={i} />
-                    </div>
-                  ))
-                ) : (
-                  <ScrollArea>
+          </CardHeader>
+          <CardContent>
+            <div className={cn(!isopen && " ml-3 space-y-4")}>
+              {!isopen ? (
+                notes.map((note, i) => (
+                  <div onClick={() => current(note)} key={note.id}>
+                    <NoteCard note={note} index={i} />
+                  </div>
+                ))
+              ) : (
+                <ScrollArea>
                   <div className="w-[20rem] h-60 ">
                     <NoteReader open={open} note={currentId} />
                   </div>
-                  </ScrollArea>
-                )}
-              </div>
-            </CardContent>
-         
+                </ScrollArea>
+              )}
+            </div>
+          </CardContent>
+
           <CardFooter className="justify-end">
             {!isopen && (
               <PlusCircle

@@ -1,16 +1,13 @@
 "use client";
 
-import { db } from "@/lib/db";
-import { Separator } from "../ui/separator";
-import { currentProfile } from "@/lib/current-profile";
-import { redirectToSignIn } from "@clerk/nextjs";
 import { Code, Profile } from "@prisma/client";
-import { useRouter } from "next/navigation";
-import { Button } from "../ui/button";
-import { Edit, PlusCircle, Trash } from "lucide-react";
-import { useState } from "react";
 import axios from "axios";
+import { PlusCircle, Trash } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 import ActionTooltip from "../action-tooltip";
+import { Button } from "../ui/button";
+import { Separator } from "../ui/separator";
 
 export const CodeSidebar = ({
   codes,

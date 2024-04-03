@@ -1,17 +1,9 @@
 import {
   Card,
-  CardContent,
   CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
+  CardTitle
 } from "@/components/ui/card";
 import { Note } from "@prisma/client";
-import { Trash } from "lucide-react";
-import axios from "axios";
-import { useRouter } from "next/navigation";
-import toast from "react-hot-toast";
-import { Preview } from "../preview";
 
 interface NoteCardProps {
   note: Note;

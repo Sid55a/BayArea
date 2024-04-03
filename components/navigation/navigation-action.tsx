@@ -1,12 +1,10 @@
 "use client";
 
-import { Plus } from "lucide-react";
-import ActionTooltip from "../action-tooltip";
 import { useModal } from "@/hooks/use-model-store";
-import { useEffect, useRef } from 'react';
 import { Player } from '@lordicon/react';
+import { useEffect, useRef } from 'react';
 import ICON from '../../public/g.json';
-import ICON2 from '../../public/plus.json';
+import ActionTooltip from "../action-tooltip";
 const NavigationAction = () => {
   const { onOpen } = useModal();
 

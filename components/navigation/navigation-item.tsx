@@ -1,8 +1,8 @@
 "use client";
-import { useParams, useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
-import ActionTooltip from "../action-tooltip";
 import Image from "next/image";
+import { useParams, useRouter } from "next/navigation";
+import ActionTooltip from "../action-tooltip";
 
 interface NavigationItemProps {
   id: string;

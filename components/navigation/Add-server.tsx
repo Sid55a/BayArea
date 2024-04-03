@@ -1,11 +1,7 @@
 "use client";
-import { MessageSquarePlus, Plus, PlusSquare } from "lucide-react";
-import ActionTooltip from "../action-tooltip";
 import { useModal } from "@/hooks/use-model-store";
-import { useEffect, useRef } from 'react';
-import { Player } from '@lordicon/react';
-import ICON from '../../public/g.json';
-import ICON2 from '../../public/plus.json';
+import { PlusSquare } from "lucide-react";
+import ActionTooltip from "../action-tooltip";
 const AddServer = () => {
   const { onOpen } = useModal();
   

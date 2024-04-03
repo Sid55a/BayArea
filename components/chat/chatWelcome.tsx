@@ -1,7 +1,6 @@
-import { AtSign,VenetianMask ,Hash } from "lucide-react";
-import { useEffect, useRef } from 'react';
 import { Player } from '@lordicon/react';
-import  ICON from './../../public/lock.json';
+import { useEffect, useRef } from 'react';
+import ICON from './../../public/lock.json';
 function ChatWelcome({
   type,
   name,

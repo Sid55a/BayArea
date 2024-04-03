@@ -6,7 +6,6 @@ import {
   Server,
   TODO,
 } from "@prisma/client";
-import { type } from "os";
 import { create } from "zustand";
 
 export type ModalType =
